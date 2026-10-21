@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf6ff">
+  <meta name="description" content="Pulau Komik — petualangan komik edukasi dari berbagai mata pelajaran.">
+  <title>Pulau Komik — Petualangan Menjelajahi Dunia Ilmu</title>
+  <link rel="stylesheet" href="assets/css/komik.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85'%3E📚%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="sky-decor decor-one" aria-hidden="true">✦</div>
+  <div class="sky-decor decor-two" aria-hidden="true">✧</div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Pulau Komik, beranda">
+      <span class="brand-mark">📚</span>
+      <span><strong>PULAU KOMIK</strong><small>Petualangan Menjelajahi Dunia Ilmu</small></span>
+    </a>
+    <a class="top-link" href="#koleksi">Jelajahi Komik <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="sparkle">✦</span> PERPUSTAKAAN KOMIK DIGITAL</span>
+        <h1>Setiap bab,<br><span>petualangan baru!</span></h1>
+        <p>Masuki dunia cerita, pecahkan misteri, dan temukan pengetahuan seru dari berbagai mata pelajaran.</p>
+        <a class="primary-button" href="#koleksi">Mulai bertualang <span>→</span></a>
+        <div class="hero-trust"><span>✦</span> Baca • Belajar • Bertumbuh</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi buku ajaib">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="planet planet-a">✦</div><div class="planet planet-b">✧</div>
+        <div class="floating-book"><div class="book-spine"></div><div class="book-page left-page">A B C<br><span>1 2 3</span></div><div class="book-page right-page">✦<br><span>IDE!</span></div></div>
+        <div class="art-cloud cloud-a"></div><div class="art-cloud cloud-b"></div>
+        <div class="art-caption">BUKA BUKU, BUKA DUNIA!</div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Ringkasan koleksi">
+      <div><span class="stat-icon">📘</span><span><strong id="total-comics">—</strong><small>Komik tersedia</small></span></div>
+      <div><span class="stat-icon">🧭</span><span><strong id="total-subjects">—</strong><small>Dunia pelajaran</small></span></div>
+      <div><span class="stat-icon">🌟</span><span><strong>100%</strong><small>Petualangan belajar</small></span></div>
+    </section>
+
+    <section id="koleksi" class="collection-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">PETA PETUALANGAN</span><h2>Jelajahi dunia ilmu</h2><p>Pilih mata pelajaran, lalu temukan bab yang ingin kamu baca.</p></div>
+        <span class="section-star" aria-hidden="true">✦</span>
+      </div>
+      <div id="subject-filters" class="subject-filters" aria-label="Filter mata pelajaran">
+        <button class="filter-chip active" data-subject="all">✨ Semua koleksi</button>
+      </div>
+
+      <div class="search-row">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Cari judul komik atau materi..." autocomplete="off"><kbd>⌕</kbd></label>
+        <label class="sort-box"><span>Urutkan</span><select id="sort-select"><option value="order">Urutan bab</option><option value="newest">Terbaru</option><option value="az">Judul A–Z</option></select></label>
+      </div>
+      <div class="results-meta"><span id="results-count">Memuat koleksi…</span><button id="clear-filters" class="text-button" hidden>Hapus filter</button></div>
+      <div id="comic-grid" class="comic-grid" aria-live="polite">
+        <div class="loading-card"><div class="loader"></div><p>Membuka gerbang perpustakaan…</p></div>
+      </div>
+      <div id="empty-state" class="empty-state" hidden><div>🗺️</div><h3>Belum menemukan komik</h3><p>Coba kata kunci lain atau pilih mata pelajaran yang berbeda.</p></div>
+      <div id="load-error" class="load-error" hidden><strong>Gerbang katalog belum terbuka.</strong><p id="error-message">Pastikan file komik.json tersedia dan repositori dapat diakses publik.</p><button id="retry-load" class="secondary-button">Coba lagi</button></div>
+    </section>
+
+    <section class="inspiration">
+      <div class="inspiration-icon">🌈</div><div><span class="eyebrow">PESAN PENJELAJAH</span><h2>Rasa ingin tahu adalah awal dari penemuan.</h2><p>Satu halaman bisa membuka ide baru. Satu cerita bisa menginspirasi langkah besar.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="./">📚 PULAU KOMIK</a><span>Dibuat untuk menemani petualangan belajar.</span><a href="https://github.com/sdn160gresik/komik" target="_blank" rel="noopener">Sumber koleksi di GitHub ↗</a></footer>
+
+  <div id="reader" class="reader" hidden role="dialog" aria-modal="true" aria-label="Pembaca komik">
+    <div class="reader-topbar">
+      <button id="reader-close" class="icon-button" aria-label="Tutup pembaca">✕</button>
+      <div class="reader-title-wrap"><strong id="reader-title">Judul komik</strong><small id="reader-subtitle">Petualangan membaca</small></div>
+      <button id="reader-fullscreen" class="icon-button" aria-label="Layar penuh">⛶</button>
+    </div>
+    <div class="reader-progress"><span id="reader-progress-fill"></span></div>
+    <div class="reader-stage">
+      <button id="page-prev" class="page-arrow" aria-label="Halaman sebelumnya">‹</button>
+      <div class="reader-page-wrap"><img id="reader-image" alt="Halaman komik" draggable="false"><div id="reader-image-error" hidden>Gambar halaman tidak dapat dimuat.</div></div>
+      <button id="page-next" class="page-arrow" aria-label="Halaman berikutnya">›</button>
+    </div>
+    <div class="reader-controls"><span id="page-counter">Halaman 1 dari 1</span><div class="reader-control-buttons"><button id="page-prev-bottom" class="secondary-button">← Sebelumnya</button><button id="page-next-bottom" class="primary-button small">Berikutnya →</button></div></div>
+    <p class="reader-hint">Tips: gunakan tombol panah pada keyboard atau geser gambar pada layar sentuh.</p>
+  </div>
+
+  <script src="assets/js/komik.js" defer></script>
+</body>
+</html>
